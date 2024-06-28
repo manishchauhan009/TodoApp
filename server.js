@@ -10,10 +10,7 @@ app.use(cors());
 // app.use(cors({origin:"",methods:["POST","GET"],credentials:true}));
 app.use(express.json());
 
-mongoose.connect(process.env.DATABASE, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-}).then(() => console.log('MongoDB connected'))
+mongoose.connect(process.env.DATABASE).then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
 
 app.use('/api', todoRoutes);
