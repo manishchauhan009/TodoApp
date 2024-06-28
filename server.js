@@ -7,6 +7,7 @@ const { notFound, errorHandler } = require('./middlewares/errorHandler'); // Add
 
 const app = express();
 app.use(cors());
+// app.use(cors({origin:"",methods:["POST","GET"],credentials:true}));
 app.use(express.json());
 
 mongoose.connect(process.env.DATABASE, {
