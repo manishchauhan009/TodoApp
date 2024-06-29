@@ -13,6 +13,10 @@ app.use(express.json());
 mongoose.connect(process.env.DATABASE).then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
 
+app.get("/",async (req,res)=>{
+  res.send("Hello World");
+})
+
 app.use('/api', todoRoutes);
 
 app.use(notFound); // Middleware to handle 404
